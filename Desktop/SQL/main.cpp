@@ -2,6 +2,8 @@
 #include <string>
 #include <cstdlib>
 
+#define PERIOD 30
+
 using namespace std;
 
 int period_of_issues(string date);
@@ -95,7 +97,7 @@ public:
     }
     int is_zlostnii_chitatel() {
         for (int i = 0; i < counter_issues; ++i) {
-            if (period_of_issues(returnes[i]) - period_of_issues(issues[i]) > 30) {
+            if (period_of_issues(returnes[i]) - period_of_issues(issues[i]) > PERIOD) {
                 zlostnost[students[i]] += period_of_issues(returnes[i]) - period_of_issues(issues[i]);
             }
         }
