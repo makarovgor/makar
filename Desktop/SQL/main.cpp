@@ -181,12 +181,14 @@ int period_of_issues(string date) {
 
 int max(int zlostnost[]) {
     int max = 0;
+    int id = zlostnost[0];
     for (int i = 0; i < 500; ++i) {
         if (zlostnost[i] > max) {
             max = zlostnost[i];
+            id = i;
         }
     }
-    return max;
+    return id;
 }
 
 
